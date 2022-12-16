@@ -35,8 +35,8 @@ user_stats = PrettyTable()
 user_stats.field_names = ["Тип игры", "Побед", "Поражений", "Процент побед"]
 user_stats.add_rows(
     [
-        ["Турбо", turbo_wins, turbo_lose, round(turbo_wins / (turbo_lose + turbo_wins) * 100, 3)],
-        ["Обычная", normal_wins, normal_lose, round(normal_wins / (normal_wins + normal_lose) * 100, 3)]
+        ["Турбо", turbo_wins, turbo_lose, round(turbo_wins / (turbo_lose + turbo_wins) * 100, 2)],
+        ["Обычная", normal_wins, normal_lose, round(normal_wins / (normal_wins + normal_lose) * 100, 2)]
     ]
 )
 print(user_stats)
@@ -54,6 +54,6 @@ hero_stats = PrettyTable()
 hero_stats.field_names = ["Название героя", "Матчей", "Количество побед", "Количество поражений", "Процент побед"]
 for hero in best_twenty_heroes:
     hero_stats.add_row([id_name_heroes_data[hero["hero_id"]], hero["games"], hero["win"],
-                        hero["games"] - hero["win"], round(hero["win"] / hero["games"] * 100, 3)])
+                        hero["games"] - hero["win"], round(hero["win"] / hero["games"] * 100, 2)])
 
 print("Лучшие 20 героев \n", hero_stats)
