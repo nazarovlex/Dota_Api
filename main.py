@@ -39,6 +39,7 @@ user_stats.add_rows(
         ["Обычная", normal_wins, normal_lose, round(normal_wins / (normal_wins + normal_lose) * 100, 2)]
     ]
 )
+
 print(user_stats)
 
 all_heroes_response = requests.get("https://api.opendota.com/api/heroes", params=params)
